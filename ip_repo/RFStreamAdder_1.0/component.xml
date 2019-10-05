@@ -1,0 +1,1986 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spirit:component xmlns:xilinx="http://www.xilinx.com" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <spirit:vendor>xilinx.com</spirit:vendor>
+  <spirit:library>user</spirit:library>
+  <spirit:name>RFStreamAdder</spirit:name>
+  <spirit:version>1.0</spirit:version>
+  <spirit:busInterfaces>
+    <spirit:busInterface>
+      <spirit:name>S00_AXI</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="aximm" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="aximm_rtl" spirit:version="1.0"/>
+      <spirit:slave>
+        <spirit:memoryMapRef spirit:memoryMapRef="S00_AXI"/>
+      </spirit:slave>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>AWADDR</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_awaddr</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>AWPROT</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_awprot</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>AWVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_awvalid</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>AWREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_awready</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>WDATA</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_wdata</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>WSTRB</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_wstrb</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>WVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_wvalid</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>WREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_wready</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>BRESP</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_bresp</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>BVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_bvalid</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>BREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_bready</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>ARADDR</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_araddr</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>ARPROT</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_arprot</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>ARVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_arvalid</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>ARREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_arready</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RDATA</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_rdata</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RRESP</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_rresp</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_rvalid</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_rready</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>WIZ_DATA_WIDTH</spirit:name>
+          <spirit:value spirit:format="long" spirit:id="BUSIFPARAM_VALUE.S00_AXI.WIZ_DATA_WIDTH" spirit:choiceRef="choice_list_6fc15197">32</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>WIZ_NUM_REG</spirit:name>
+          <spirit:value spirit:format="long" spirit:id="BUSIFPARAM_VALUE.S00_AXI.WIZ_NUM_REG" spirit:minimum="4" spirit:maximum="512" spirit:rangeType="long">4</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>SUPPORTS_NARROW_BURST</spirit:name>
+          <spirit:value spirit:format="long" spirit:id="BUSIFPARAM_VALUE.S00_AXI.SUPPORTS_NARROW_BURST" spirit:choiceRef="choice_pairs_ce1226b1">0</spirit:value>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>AXI_MAIN_IN</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="axis" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="axis_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TDATA</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>axi_main_in_tdata</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>axi_main_in_tvalid</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>axi_main_in_tready</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>AXI_RF_OUT</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="axis" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="axis_rtl" spirit:version="1.0"/>
+      <spirit:master/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TDATA</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>axi_rf_out_tdata</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>axi_rf_out_tvalid</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>axi_rf_out_tready</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>WIZ_DATA_WIDTH</spirit:name>
+          <spirit:value spirit:format="long" spirit:id="BUSIFPARAM_VALUE.AXI_RF_OUT.WIZ_DATA_WIDTH" spirit:choiceRef="choice_list_6fc15197">32</spirit:value>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>AXI_SUB0_IN</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="axis" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="axis_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TDATA</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>axi_sub0_in_tdata</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>axi_sub0_in_tvalid</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>axi_sub0_in_tready</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>S00_AXI_RST</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RST</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_aresetn</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>POLARITY</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.S00_AXI_RST.POLARITY" spirit:choiceRef="choice_list_9d8b0d81">ACTIVE_LOW</spirit:value>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>S00_AXI_CLK</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>CLK</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_aclk</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>ASSOCIATED_BUSIF</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.S00_AXI_CLK.ASSOCIATED_BUSIF">S00_AXI</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>ASSOCIATED_RESET</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.S00_AXI_CLK.ASSOCIATED_RESET">s00_axi_aresetn</spirit:value>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>axis_aresetn</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RST</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>axis_aresetn</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>POLARITY</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.AXIS_ARESETN.POLARITY" spirit:choiceRef="choice_list_9d8b0d81">ACTIVE_LOW</spirit:value>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>axis_aclk</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>CLK</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>axis_aclk</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>ASSOCIATED_RESET</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.AXIS_ACLK.ASSOCIATED_RESET">axis_aresetn</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>ASSOCIATED_BUSIF</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.AXIS_ACLK.ASSOCIATED_BUSIF">AXI_MAIN_IN:AXI_RF_OUT:AXI_SUB0_IN:AXI_SUB1_IN:AXI_SUB2_IN:AXI_SUB3_IN</spirit:value>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>AXI_SUB1_IN</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="axis" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="axis_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:connectionRequired>true</spirit:connectionRequired>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>axi_sub1_in_tvalid</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>axi_sub1_in_tready</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TDATA</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>axi_sub1_in_tdata</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:vendorExtensions>
+        <xilinx:busInterfaceInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="BUSIF_ENABLEMENT.AXI_SUB1_IN" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.N_SUB_STREAMS&apos;)) > 1">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:busInterfaceInfo>
+      </spirit:vendorExtensions>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>AXI_SUB2_IN</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="axis" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="axis_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TDATA</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>axi_sub2_in_tdata</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>axi_sub2_in_tvalid</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>axi_sub2_in_tready</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>NUM_READ_OUTSTANDING</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.AXI_SUB2_IN.NUM_READ_OUTSTANDING"/>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>NUM_WRITE_OUTSTANDING</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.AXI_SUB2_IN.NUM_WRITE_OUTSTANDING"/>
+        </spirit:parameter>
+      </spirit:parameters>
+      <spirit:vendorExtensions>
+        <xilinx:busInterfaceInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="BUSIF_ENABLEMENT.AXI_SUB2_IN" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.N_SUB_STREAMS&apos;)) > 2">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:busInterfaceInfo>
+      </spirit:vendorExtensions>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>AXI_SUB3_IN</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="axis" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="axis_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TDATA</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>axi_sub3_in_tdata</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>axi_sub3_in_tvalid</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>axi_sub3_in_tready</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>NUM_READ_OUTSTANDING</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.AXI_SUB3_IN.NUM_READ_OUTSTANDING"/>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>NUM_WRITE_OUTSTANDING</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.AXI_SUB3_IN.NUM_WRITE_OUTSTANDING"/>
+        </spirit:parameter>
+      </spirit:parameters>
+      <spirit:vendorExtensions>
+        <xilinx:busInterfaceInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="BUSIF_ENABLEMENT.AXI_SUB3_IN" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.N_SUB_STREAMS&apos;)) > 3">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:busInterfaceInfo>
+      </spirit:vendorExtensions>
+    </spirit:busInterface>
+  </spirit:busInterfaces>
+  <spirit:memoryMaps>
+    <spirit:memoryMap>
+      <spirit:name>S00_AXI</spirit:name>
+      <spirit:addressBlock>
+        <spirit:name>S00_AXI_reg</spirit:name>
+        <spirit:baseAddress spirit:format="long" spirit:resolve="user">0</spirit:baseAddress>
+        <spirit:range spirit:format="long">4096</spirit:range>
+        <spirit:width spirit:format="long">32</spirit:width>
+        <spirit:usage>register</spirit:usage>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>OFFSET_BASE_PARAM</spirit:name>
+            <spirit:value spirit:id="ADDRBLOCKPARAM_VALUE.S00_AXI.S00_AXI_REG.OFFSET_BASE_PARAM">C_S00_AXI_BASEADDR</spirit:value>
+          </spirit:parameter>
+          <spirit:parameter>
+            <spirit:name>OFFSET_HIGH_PARAM</spirit:name>
+            <spirit:value spirit:id="ADDRBLOCKPARAM_VALUE.S00_AXI.S00_AXI_REG.OFFSET_HIGH_PARAM">C_S00_AXI_HIGHADDR</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:addressBlock>
+    </spirit:memoryMap>
+  </spirit:memoryMaps>
+  <spirit:model>
+    <spirit:views>
+      <spirit:view>
+        <spirit:name>xilinx_verilogsynthesis</spirit:name>
+        <spirit:displayName>Verilog Synthesis</spirit:displayName>
+        <spirit:envIdentifier>verilogSource:vivado.xilinx.com:synthesis</spirit:envIdentifier>
+        <spirit:language>verilog</spirit:language>
+        <spirit:modelName>RFStreamAdder_v1_0</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_verilogsynthesis_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>8caa4140</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_verilogbehavioralsimulation</spirit:name>
+        <spirit:displayName>Verilog Simulation</spirit:displayName>
+        <spirit:envIdentifier>verilogSource:vivado.xilinx.com:simulation</spirit:envIdentifier>
+        <spirit:language>verilog</spirit:language>
+        <spirit:modelName>RFStreamAdder_v1_0</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_verilogbehavioralsimulation_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>8caa4140</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_softwaredriver</spirit:name>
+        <spirit:displayName>Software Driver</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:sw.driver</spirit:envIdentifier>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_softwaredriver_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>7f087080</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_xpgui</spirit:name>
+        <spirit:displayName>UI Layout</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:xgui.ui</spirit:envIdentifier>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_xpgui_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>4dca0a47</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>bd_tcl</spirit:name>
+        <spirit:displayName>Block Diagram</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:block.diagram</spirit:envIdentifier>
+        <spirit:fileSetRef>
+          <spirit:localName>bd_tcl_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>16328387</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_testbench</spirit:name>
+        <spirit:displayName>Test Bench</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:simulation.testbench</spirit:envIdentifier>
+        <spirit:modelName>RFSA_tb</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_testbench_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>e0a8ff42</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+    </spirit:views>
+    <spirit:ports>
+      <spirit:port>
+        <spirit:name>axis_aclk</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>axis_aresetn</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_awaddr</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S00_AXI_ADDR_WIDTH&apos;)) - 1)">3</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_awprot</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">2</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_awvalid</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_awready</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_wdata</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S00_AXI_DATA_WIDTH&apos;)) - 1)">31</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_wstrb</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_S00_AXI_DATA_WIDTH&apos;)) / 8) - 1)">3</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_wvalid</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_wready</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_bresp</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">1</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_bvalid</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_bready</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_araddr</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S00_AXI_ADDR_WIDTH&apos;)) - 1)">3</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_arprot</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">2</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_arvalid</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_arready</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_rdata</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S00_AXI_DATA_WIDTH&apos;)) - 1)">31</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_rresp</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">1</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_rvalid</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_rready</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_aclk</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_aresetn</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>axi_rf_out_tdata</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_AXI_STREAM_TDATA_WIDTH&apos;)) - 1)">255</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>axi_rf_out_tvalid</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>axi_rf_out_tready</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>axi_sub0_in_tready</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>axi_sub0_in_tdata</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_AXI_STREAM_TDATA_WIDTH&apos;)) - 1)">255</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>axi_sub0_in_tvalid</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>axi_sub1_in_tready</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>axi_sub1_in_tdata</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_AXI_STREAM_TDATA_WIDTH&apos;)) - 1)">255</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>axi_sub1_in_tvalid</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>axi_sub2_in_tready</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>axi_sub2_in_tdata</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_AXI_STREAM_TDATA_WIDTH&apos;)) - 1)">255</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>axi_sub2_in_tvalid</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>axi_sub3_in_tready</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>axi_sub3_in_tdata</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_AXI_STREAM_TDATA_WIDTH&apos;)) - 1)">255</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>axi_sub3_in_tvalid</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>axi_main_in_tdata</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_AXI_STREAM_TDATA_WIDTH&apos;)) - 1)">255</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>axi_main_in_tvalid</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>axi_main_in_tready</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+    </spirit:ports>
+    <spirit:modelParameters>
+      <spirit:modelParameter xsi:type="spirit:nameValueTypeType" spirit:dataType="integer">
+        <spirit:name>C_S00_AXI_DATA_WIDTH</spirit:name>
+        <spirit:displayName>C S00 AXI DATA WIDTH</spirit:displayName>
+        <spirit:description>Width of S_AXI data bus</spirit:description>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_S00_AXI_DATA_WIDTH" spirit:order="3" spirit:rangeType="long">32</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>C_S00_AXI_ADDR_WIDTH</spirit:name>
+        <spirit:displayName>C S00 AXI ADDR WIDTH</spirit:displayName>
+        <spirit:description>Width of S_AXI address bus</spirit:description>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_S00_AXI_ADDR_WIDTH" spirit:order="4" spirit:rangeType="long">4</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>C_AXI_RF_OUT_START_COUNT</spirit:name>
+        <spirit:displayName>C AXI RF OUT START COUNT</spirit:displayName>
+        <spirit:description>Start count is the number of clock cycles the master will wait before initiating/issuing any transaction.</spirit:description>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_AXI_RF_OUT_START_COUNT" spirit:order="8" spirit:minimum="1" spirit:rangeType="long">128</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>C_AXI_STREAM_TDATA_WIDTH</spirit:name>
+        <spirit:displayName>C Axi Stream Tdata Width</spirit:displayName>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_AXI_STREAM_TDATA_WIDTH">256</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>N_SUB_STREAMS</spirit:name>
+        <spirit:displayName>N Sub Streams</spirit:displayName>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.N_SUB_STREAMS" spirit:bitStringLength="32">0x00000001</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>INITIAL_SCALE0</spirit:name>
+        <spirit:displayName>Initial Scale0</spirit:displayName>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.INITIAL_SCALE0" spirit:bitStringLength="32">0x0000199A</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>INITIAL_SCALE1</spirit:name>
+        <spirit:displayName>Initial Scale1</spirit:displayName>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.INITIAL_SCALE1" spirit:bitStringLength="32">0x0000199A</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>INITIAL_SCALE2</spirit:name>
+        <spirit:displayName>Initial Scale2</spirit:displayName>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.INITIAL_SCALE2" spirit:bitStringLength="32">0x0000199A</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>INITIAL_SCALE3</spirit:name>
+        <spirit:displayName>Initial Scale3</spirit:displayName>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.INITIAL_SCALE3" spirit:bitStringLength="32">0x0000199A</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>INITIAL_BYPASS</spirit:name>
+        <spirit:displayName>Initial Bypass</spirit:displayName>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.INITIAL_BYPASS" spirit:bitStringLength="1">&quot;0&quot;</spirit:value>
+      </spirit:modelParameter>
+    </spirit:modelParameters>
+  </spirit:model>
+  <spirit:choices>
+    <spirit:choice>
+      <spirit:name>choice_list_6fc15197</spirit:name>
+      <spirit:enumeration>32</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>choice_list_92488d58</spirit:name>
+      <spirit:enumeration>16</spirit:enumeration>
+      <spirit:enumeration>64</spirit:enumeration>
+      <spirit:enumeration>128</spirit:enumeration>
+      <spirit:enumeration>256</spirit:enumeration>
+      <spirit:enumeration>32</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>choice_list_9d8b0d81</spirit:name>
+      <spirit:enumeration>ACTIVE_HIGH</spirit:enumeration>
+      <spirit:enumeration>ACTIVE_LOW</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>choice_pairs_ce1226b1</spirit:name>
+      <spirit:enumeration spirit:text="true">1</spirit:enumeration>
+      <spirit:enumeration spirit:text="false">0</spirit:enumeration>
+    </spirit:choice>
+  </spirit:choices>
+  <spirit:fileSets>
+    <spirit:fileSet>
+      <spirit:name>xilinx_verilogsynthesis_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>hdl/RFStreamAdder_v1_0_S00_AXI.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/RFStreamAdder_v1_0.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>CHECKSUM_929d6075</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_verilogbehavioralsimulation_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>hdl/RFStreamAdder_v1_0_S00_AXI.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/RFStreamAdder_v1_0.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_softwaredriver_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>drivers/RFStreamAdder_v1_0/data/RFStreamAdder.mdd</spirit:name>
+        <spirit:userFileType>mdd</spirit:userFileType>
+        <spirit:userFileType>driver_mdd</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>drivers/RFStreamAdder_v1_0/data/RFStreamAdder.tcl</spirit:name>
+        <spirit:fileType>tclSource</spirit:fileType>
+        <spirit:userFileType>driver_tcl</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>drivers/RFStreamAdder_v1_0/src/Makefile</spirit:name>
+        <spirit:userFileType>driver_src</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>drivers/RFStreamAdder_v1_0/src/RFStreamAdder.h</spirit:name>
+        <spirit:fileType>cSource</spirit:fileType>
+        <spirit:userFileType>driver_src</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>drivers/RFStreamAdder_v1_0/src/RFStreamAdder.c</spirit:name>
+        <spirit:fileType>cSource</spirit:fileType>
+        <spirit:userFileType>driver_src</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>drivers/RFStreamAdder_v1_0/src/RFStreamAdder_selftest.c</spirit:name>
+        <spirit:fileType>cSource</spirit:fileType>
+        <spirit:userFileType>driver_src</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_xpgui_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>xgui/RFStreamAdder_v1_0.tcl</spirit:name>
+        <spirit:fileType>tclSource</spirit:fileType>
+        <spirit:userFileType>CHECKSUM_4dca0a47</spirit:userFileType>
+        <spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>bd_tcl_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>bd/bd.tcl</spirit:name>
+        <spirit:fileType>tclSource</spirit:fileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_testbench_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>hdl/RFSA_tb.sv</spirit:name>
+        <spirit:fileType>systemVerilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_simulation</spirit:userFileType>
+        <spirit:userFileType>USED_IN_testbench</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+  </spirit:fileSets>
+  <spirit:description>Scales and adds channel to RFDC Stream</spirit:description>
+  <spirit:parameters>
+    <spirit:parameter>
+      <spirit:name>C_S00_AXI_DATA_WIDTH</spirit:name>
+      <spirit:displayName>C S00 AXI DATA WIDTH</spirit:displayName>
+      <spirit:description>Width of S_AXI data bus</spirit:description>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_S00_AXI_DATA_WIDTH" spirit:choiceRef="choice_list_6fc15197" spirit:order="3">32</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.C_S00_AXI_DATA_WIDTH">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>C_S00_AXI_ADDR_WIDTH</spirit:name>
+      <spirit:displayName>C S00 AXI ADDR WIDTH</spirit:displayName>
+      <spirit:description>Width of S_AXI address bus</spirit:description>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_S00_AXI_ADDR_WIDTH" spirit:order="4" spirit:rangeType="long">4</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.C_S00_AXI_ADDR_WIDTH">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>C_S00_AXI_BASEADDR</spirit:name>
+      <spirit:displayName>C S00 AXI BASEADDR</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.C_S00_AXI_BASEADDR" spirit:order="5" spirit:bitStringLength="32">0xFFFFFFFF</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.C_S00_AXI_BASEADDR">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>C_S00_AXI_HIGHADDR</spirit:name>
+      <spirit:displayName>C S00 AXI HIGHADDR</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.C_S00_AXI_HIGHADDR" spirit:order="6" spirit:bitStringLength="32">0x00000000</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.C_S00_AXI_HIGHADDR">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>C_AXI_RF_OUT_START_COUNT</spirit:name>
+      <spirit:displayName>C AXI RF OUT START COUNT</spirit:displayName>
+      <spirit:description>Start count is the number of clock cycles the master will wait before initiating/issuing any transaction.</spirit:description>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_AXI_RF_OUT_START_COUNT" spirit:order="8" spirit:minimum="1" spirit:rangeType="long">128</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>Component_Name</spirit:name>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Component_Name" spirit:order="1">RFStreamAdder_v1_0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>C_AXI_STREAM_TDATA_WIDTH</spirit:name>
+      <spirit:displayName>Width of the AXI stream data</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_AXI_STREAM_TDATA_WIDTH" spirit:choiceRef="choice_list_92488d58">256</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>N_SUB_STREAMS</spirit:name>
+      <spirit:displayName>N Sub Streams</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.N_SUB_STREAMS" spirit:bitStringLength="32">0x00000001</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>INITIAL_SCALE0</spirit:name>
+      <spirit:displayName>Initial Scale0</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.INITIAL_SCALE0" spirit:bitStringLength="32">0x0000199A</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>INITIAL_SCALE1</spirit:name>
+      <spirit:displayName>Initial Scale1</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.INITIAL_SCALE1" spirit:bitStringLength="32">0x0000199A</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>INITIAL_SCALE2</spirit:name>
+      <spirit:displayName>Initial Scale2</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.INITIAL_SCALE2" spirit:bitStringLength="32">0x0000199A</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>INITIAL_SCALE3</spirit:name>
+      <spirit:displayName>Initial Scale3</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.INITIAL_SCALE3" spirit:bitStringLength="32">0x0000199A</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>INITIAL_BYPASS</spirit:name>
+      <spirit:displayName>Initial Bypass</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.INITIAL_BYPASS" spirit:bitStringLength="1">&quot;0&quot;</spirit:value>
+    </spirit:parameter>
+  </spirit:parameters>
+  <spirit:vendorExtensions>
+    <xilinx:coreExtensions>
+      <xilinx:supportedFamilies>
+        <xilinx:family xilinx:lifeCycle="Pre-Production">zynquplus</xilinx:family>
+      </xilinx:supportedFamilies>
+      <xilinx:taxonomies>
+        <xilinx:taxonomy>AXI_Peripheral</xilinx:taxonomy>
+      </xilinx:taxonomies>
+      <xilinx:displayName>RFStreamAdder_v1.0</xilinx:displayName>
+      <xilinx:coreRevision>18</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2019-10-02T02:15:05Z</xilinx:coreCreationDateTime>
+      <xilinx:tags>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6e07c40e_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@20073df6_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6950a47f_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@78d9264d_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5b32f632_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3811eb7a_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5133283d_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@d1f246a_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@59300e63_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@665fa361_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@20189296_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@24525641_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@71697018_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4d99592d_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2cbca76a_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@643d9607_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7be8259a_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5756e4f8_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@696aed35_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@70172e6f_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@38fb893f_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@22329356_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@552e9313_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@70c1c494_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4b44fd35_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@183d9817_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7f7e23_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4d13d31a_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@53fc4878_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3aec2d38_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7d31ccc_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@498e15f6_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@420e0420_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@32d2f232_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@559b2fcb_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@36547799_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5bad6eb_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@10656f28_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@50a04e15_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@534399b2_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@61ca66d9_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@28f55a19_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@64e4f65_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@582aa1a1_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@67dd8261_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4892970c_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5872c683_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@cff6f8f_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5c64850_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@55839f9d_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@458ee08c_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4592f2cb_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@26da74ec_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3f041c8_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@418d01b9_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@20bc317e_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@244faae5_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@75912a82_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3159dcc6_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@23392e30_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@69abceb2_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@729954dc_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7a33395a_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@46fcf1af_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@60ced4a7_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@34724c66_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@55e09128_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@79ff0b25_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5814b2e4_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1be0c197_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@50174f07_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@717d4bc8_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@298a219c_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@40b1245a_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6bcfe517_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@433e384f_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@21bea91b_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5e71c0d8_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@43a4aaeb_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@25686cd_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@30b4ec06_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@e9c2813_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@15efa146_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@464c5fc3_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@14b897e2_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@40d4d8d_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7efafa8d_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7c51ae8b_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@74753112_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@57503fa3_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@b8ad230_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4a4a07b2_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@50ed3db2_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7cc48234_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6f6673eb_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@399211ad_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7ca8c625_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2dad4d68_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5a32d0ab_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@52c6e263_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5e5649bd_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@65feb839_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5ef07168_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@54261c0d_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7e3acfef_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@28d2dbbd_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@439a23_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@124c5b4_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@70883642_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@36d2df40_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@28caa7ed_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4731de23_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4e7ab0cc_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@47dfcc5d_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5fd7215c_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7d7c562d_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@299ba6fc_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3e752c56_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3f0d1ccf_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2d3b9d73_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@675d80b0_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@45b909e0_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5db0af30_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2f1366c6_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7d1e171d_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@66ce6388_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4e9c4f74_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2c285392_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@345a439a_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@71502fea_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@67539716_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@19cbfd11_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@48228629_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7dfb69b8_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2be10e0f_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@14810d8d_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2b562272_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7784b9ff_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@77bd483b_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3a3396f8_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3572d933_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2adb7e6a_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@54b99c5b_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@49f136a8_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5e5b2ba3_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@49ae086c_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@71ca4e33_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@73879ec7_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@46699a40_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@75122c3_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2c54d292_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7962304b_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@ee505d0_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@651a29b0_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1500c769_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3f25e85d_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1a0169e0_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@46164ba9_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3ffc8770_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@22050997_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3471b5a4_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@42702475_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@36d5726e_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@31f8e29c_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@59423e04_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1a15f2d7_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4fe8a65d_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5931943f_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@17a09de3_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7f337856_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@63563390_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@dda6082_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@618733b9_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@512ce454_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4b22544a_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7d5fd3f3_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@31158d83_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6bd4c503_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@11101914_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@55ef00e_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@618347d_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@13dd890f_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@70bc567_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@723b2f72_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@ecc3350_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@36a193f4_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@73128cc0_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6c6c23a_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@22fe3e56_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6d41427f_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2012a946_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@a447c27_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@ae791bb_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@18a91fe9_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@66d50d1e_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@50f4624e_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2d38624b_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@781c9415_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@17e92284_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7ef7ccf0_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5d0e57ef_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@55dcb3b6_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6efbee96_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7f099cc1_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4c6fe9db_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@cb5b487_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@60e49c39_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2be8e8c6_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@72dc3afd_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@e47db87_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6bacea37_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4cddd303_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@47f509e4_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@45331fd6_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@57b8a8de_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@47ce6b15_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@23c2fcde_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@74dca029_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@171907ef_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1837a5a3_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6108cd45_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@748939e8_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5ef5dc60_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2a5149d1_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@47a9dc81_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2321ef79_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@57da2d68_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2b06a252_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@25712ba3_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@104e36e5_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1ec2634e_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@78e491c0_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5119f918_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6ba09eab_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@9d5ded4_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6fe2a883_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6f210d4a_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@35bb6812_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6a3cc146_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@25c42f49_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@35f33cf9_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@14e9bf77_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6f636fa_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@256f835d_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@69cd2c29_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5ce95e64_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5b6ff413_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@28f8f92f_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6c00b392_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4c86bb89_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2464b929_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@17a4538c_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@287b0187_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5c5e2d1b_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1092c207_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@648a3a72_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3d0c663_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6e08351c_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@42fd19fa_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@79ee7bc3_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1ddd0c62_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@41e6455f_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4bb8b702_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3fb52122_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@193c0853_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2632a283_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@430a8d27_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7c42e35_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2c8117c1_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@25ab9f76_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@15b5fdb6_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@338bc006_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@22383dcc_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7489c948_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3e0a53e6_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3b1de05a_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@45199fa9_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@72094804_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7f27fac3_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@24c270d3_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5348df8_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@51d57b8_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@24957a9f_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@28b178e5_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5846e43a_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@49da8e32_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7d26176f_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2d4a0a4c_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3348e5d7_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@27b90359_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@f5c16a6_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@49c3c041_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3c735039_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@db804d2_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@76f8a7a8_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6a9be2b8_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@542b0c72_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5250fa79_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4f4614c3_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@525d34f6_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6ad99042_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3da86edf_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7aa89911_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@582d6dba_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7ddc467e_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3c3bcc41_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7ac7ea99_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2b284b46_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@124a3db6_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@56bde65f_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4da78bea_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@9dce4e7_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@648888ac_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3d7faa8_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@46c8302d_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5797e757_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@490b4475_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@22e62f7b_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@52fc9802_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4defdbf6_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@99bb084_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@33bb7dae_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3fd833b4_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@49dc452a_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6d63650a_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4b76dd3a_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@700cac3f_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@145689fd_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@d0ea2e2_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@131e507e_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7f94624c_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@51c4dc2d_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3f93dde9_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6b96500b_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3485f689_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@197b4a58_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4b32fa29_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5f4d0e1f_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7a176483_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7ffe30bc_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@95c120f_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@10dd3773_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3a3b1c60_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@12c0aa00_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3a67944_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4204c255_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@37baf42e_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@33700050_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7dc6492_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@175d4412_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4ab5c4c1_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@10dc709e_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@70425cbc_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7d22a42c_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3f9ca53f_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@cb3eb5e_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@14d2142f_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@70b69f61_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@16c4ab0_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6e309ebc_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5e0c2641_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1e1be58a_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@663143b6_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@58b8dfd1_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1ce7acf7_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@acfbd51_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@443f7970_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@59574c65_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7ffdf3f4_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@176b76a_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@69b44c50_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7462c94_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@390024ea_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@25a89e4c_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3794f030_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@710f999e_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4c4004d9_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@ce7ff92_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@a97cea5_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@168baaa9_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@377ec088_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5e64704b_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1dbe2b0b_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@16414bcb_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@61268876_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@57b1e8c1_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@667d604c_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1bf4a253_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@78b5b65d_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@50b3628a_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1893a672_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@13102425_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6ba74f90_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6a596df9_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@75c6c109_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@359784af_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7a9f0bd7_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5514113_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1d53e2ec_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5214513e_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@391f8ce_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@19795791_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2a6b80ee_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6655e118_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@752430a9_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@c989008_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4314cfee_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@59252680_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6b1f84b3_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@e36f87d_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3e70ad35_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2090326a_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4b9734fe_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@bdd9566_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3d2728e_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5b42e12_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@274195ff_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3475502_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7ad8f773_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@12168df9_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@671cc11a_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@64b6a831_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3d672eb3_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@49d5b4b1_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@486325fc_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@230713f4_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@13848d34_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3bc387a9_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@65cbf24b_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7127a687_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7f26f29a_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1997369_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@32ee01c8_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@cd17eb_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3c85dc73_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@399b50a6_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5afad219_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@525e174_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5476446a_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@cce9044_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6ab74141_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4a267f24_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7edc8610_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4ff51dd6_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@615f16_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@23aaadbf_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3f0754b1_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7851b42d_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@10a5041a_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@8b604c5_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3b3d1f0_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@62915d64_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6782d424_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6f990bc9_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1b1b9d84_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@d6784c2_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6ef5bc8a_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5f3e2fed_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@152a8094_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@66cd032_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@a565df_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@39fc1fa7_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@289bac32_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@59a982d2_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4738d540_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@13dc649d_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3e3cadd7_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@52f95273_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6d705a87_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@784e17fb_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@446094dd_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@390e9b18_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/RFStreamAdder_1.0</xilinx:tag>
+      </xilinx:tags>
+    </xilinx:coreExtensions>
+    <xilinx:packagingInfo>
+      <xilinx:xilinxVersion>2019.1</xilinx:xilinxVersion>
+      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="272ba428"/>
+      <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="ed1368d5"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="63b8afbd"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="f7826faa"/>
+      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="26b6ef91"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="7063656a"/>
+    </xilinx:packagingInfo>
+  </spirit:vendorExtensions>
+</spirit:component>

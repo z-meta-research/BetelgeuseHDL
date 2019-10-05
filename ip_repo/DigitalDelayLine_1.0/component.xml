@@ -1,0 +1,1615 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spirit:component xmlns:xilinx="http://www.xilinx.com" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <spirit:vendor>z-meta.com</spirit:vendor>
+  <spirit:library>rftools</spirit:library>
+  <spirit:name>DigitalDelayLine</spirit:name>
+  <spirit:version>1.0</spirit:version>
+  <spirit:busInterfaces>
+    <spirit:busInterface>
+      <spirit:name>AXI_DATA_IN</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="axis" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="axis_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TDATA</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>axi_data_in_tdata</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>axi_data_in_tvalid</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>axi_data_in_tready</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>HAS_TREADY</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.AXI_DATA_IN.HAS_TREADY">1</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>HAS_TSTRB</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.AXI_DATA_IN.HAS_TSTRB">0</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>HAS_TKEEP</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.AXI_DATA_IN.HAS_TKEEP">0</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>HAS_TLAST</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.AXI_DATA_IN.HAS_TLAST">0</spirit:value>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>AXI_DATA_OUT</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="axis" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="axis_rtl" spirit:version="1.0"/>
+      <spirit:master/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TDATA</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>axi_data_out_tdata</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>axi_data_out_tvalid</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>axi_data_out_tready</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>AXI_DATA_IN_RST</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RST</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>aresetn</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>POLARITY</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.AXI_DATA_IN_RST.POLARITY" spirit:choiceRef="choice_list_9d8b0d81">ACTIVE_LOW</spirit:value>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>AXI_DATA_IN_CLK</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>CLK</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>aclk</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>ASSOCIATED_BUSIF</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.AXI_DATA_IN_CLK.ASSOCIATED_BUSIF">AXI_DATA_IN</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>ASSOCIATED_RESET</spirit:name>
+          <spirit:description>aresetn</spirit:description>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.AXI_DATA_IN_CLK.ASSOCIATED_RESET">aresetn</spirit:value>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>AXI_DATA_OUT_RST</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RST</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>aresetn</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>POLARITY</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.AXI_DATA_OUT_RST.POLARITY" spirit:choiceRef="choice_list_9d8b0d81">ACTIVE_LOW</spirit:value>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>AXI_DATA_OUT_CLK</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>CLK</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>aclk</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>ASSOCIATED_BUSIF</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.AXI_DATA_OUT_CLK.ASSOCIATED_BUSIF">AXI_DATA_OUT</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>ASSOCIATED_RESET</spirit:name>
+          <spirit:description>aresetn</spirit:description>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.AXI_DATA_OUT_CLK.ASSOCIATED_RESET">aresetn</spirit:value>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>aresetn</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RST</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>aresetn</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>POLARITY</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.ARESETN.POLARITY" spirit:choiceRef="choice_list_9d8b0d81">ACTIVE_LOW</spirit:value>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>aclk</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>CLK</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>aclk</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>ASSOCIATED_RESET</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.ACLK.ASSOCIATED_RESET">aresetn</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>ASSOCIATED_BUSIF</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.ACLK.ASSOCIATED_BUSIF">AXI_DATA_IN:AXI_DATA_OUT</spirit:value>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>s00_axi_aresetn</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RST</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_aresetn</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>POLARITY</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.S00_AXI_ARESETN.POLARITY" spirit:choiceRef="choice_list_74b5137e">ACTIVE_LOW</spirit:value>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>s00_axi_aclk</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>CLK</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_aclk</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>ASSOCIATED_RESET</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.S00_AXI_ACLK.ASSOCIATED_RESET">s00_axi_aresetn</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>ASSOCIATED_BUSIF</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.S00_AXI_ACLK.ASSOCIATED_BUSIF">S00_AXI</spirit:value>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>S00_AXI</spirit:name>
+      <spirit:displayName>S00</spirit:displayName>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="aximm" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="aximm_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>BVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_bvalid</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_rready</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>BREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_bready</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>AWVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_awvalid</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>AWREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_awready</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>AWPROT</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_awprot</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>WDATA</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_wdata</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RRESP</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_rresp</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>ARPROT</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_arprot</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_rvalid</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>ARADDR</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_araddr</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>AWADDR</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_awaddr</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>ARREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_arready</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>WVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_wvalid</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>WREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_wready</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>ARVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_arvalid</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>WSTRB</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_wstrb</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>BRESP</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_bresp</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RDATA</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_rdata</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>NUM_READ_OUTSTANDING</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.S00_AXI.NUM_READ_OUTSTANDING"/>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>NUM_WRITE_OUTSTANDING</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.S00_AXI.NUM_WRITE_OUTSTANDING"/>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+  </spirit:busInterfaces>
+  <spirit:model>
+    <spirit:views>
+      <spirit:view>
+        <spirit:name>xilinx_verilogsynthesis</spirit:name>
+        <spirit:displayName>Verilog Synthesis</spirit:displayName>
+        <spirit:envIdentifier>verilogSource:vivado.xilinx.com:synthesis</spirit:envIdentifier>
+        <spirit:language>verilog</spirit:language>
+        <spirit:modelName>DigitalDelayLine_v1_0</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_verilogsynthesis_xilinx_com_ip_blk_mem_gen_8_4__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_verilogsynthesis_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>5b814ffe</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_verilogbehavioralsimulation</spirit:name>
+        <spirit:displayName>Verilog Simulation</spirit:displayName>
+        <spirit:envIdentifier>verilogSource:vivado.xilinx.com:simulation</spirit:envIdentifier>
+        <spirit:language>verilog</spirit:language>
+        <spirit:modelName>DigitalDelayLine_v1_0</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_verilogbehavioralsimulation_xilinx_com_ip_blk_mem_gen_8_4__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_verilogbehavioralsimulation_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>5b814ffe</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_xpgui</spirit:name>
+        <spirit:displayName>UI Layout</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:xgui.ui</spirit:envIdentifier>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_xpgui_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>85cd8231</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>bd_tcl</spirit:name>
+        <spirit:displayName>Block Diagram</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:block.diagram</spirit:envIdentifier>
+        <spirit:fileSetRef>
+          <spirit:localName>bd_tcl_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>16328387</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_testbench</spirit:name>
+        <spirit:displayName>Test Bench</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:simulation.testbench</spirit:envIdentifier>
+        <spirit:modelName>DDL_tb</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_testbench_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>cc2671f3</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+    </spirit:views>
+    <spirit:ports>
+      <spirit:port>
+        <spirit:name>aclk</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>aresetn</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_aclk</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_aresetn</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_awaddr</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S00_AXI_ADDR_WIDTH&apos;)) - 1)">3</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_awprot</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">2</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_awvalid</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_awready</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_wdata</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S00_AXI_DATA_WIDTH&apos;)) - 1)">31</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_wstrb</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_S00_AXI_DATA_WIDTH&apos;)) / 8) - 1)">3</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_wvalid</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_wready</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_bresp</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">1</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_bvalid</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_bready</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_araddr</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S00_AXI_ADDR_WIDTH&apos;)) - 1)">3</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_arprot</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">2</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_arvalid</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_arready</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_rdata</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S00_AXI_DATA_WIDTH&apos;)) - 1)">31</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_rresp</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">1</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_rvalid</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_rready</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>axi_data_in_tdata</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_AXI_STREAM_TDATA_WIDTH&apos;)) - 1)">255</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>axi_data_in_tvalid</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>axi_data_in_tready</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>axi_data_out_tdata</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_AXI_STREAM_TDATA_WIDTH&apos;)) - 1)">255</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>axi_data_out_tvalid</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>axi_data_out_tready</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+    </spirit:ports>
+    <spirit:modelParameters>
+      <spirit:modelParameter xsi:type="spirit:nameValueTypeType" spirit:dataType="integer">
+        <spirit:name>C_AXI_DATA_OUT_START_COUNT</spirit:name>
+        <spirit:displayName>C AXI DATA OUT START COUNT</spirit:displayName>
+        <spirit:description>Start count is the number of clock cycles the master will wait before initiating/issuing any transaction.</spirit:description>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_AXI_DATA_OUT_START_COUNT" spirit:order="5" spirit:minimum="1" spirit:rangeType="long">32</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>C_AXI_STREAM_TDATA_WIDTH</spirit:name>
+        <spirit:displayName>C Axi Stream Tdata Width</spirit:displayName>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_AXI_STREAM_TDATA_WIDTH">256</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>USE_URAM</spirit:name>
+        <spirit:displayName>Use Uram</spirit:displayName>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.USE_URAM">0</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>INITIAL_DELAY</spirit:name>
+        <spirit:displayName>Initial Delay</spirit:displayName>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.INITIAL_DELAY" spirit:bitStringLength="12">0x0FA</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>C_S00_AXI_DATA_WIDTH</spirit:name>
+        <spirit:displayName>C S00 Axi Data Width</spirit:displayName>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_S00_AXI_DATA_WIDTH">32</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>C_S00_AXI_ADDR_WIDTH</spirit:name>
+        <spirit:displayName>C S00 Axi Addr Width</spirit:displayName>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_S00_AXI_ADDR_WIDTH">4</spirit:value>
+      </spirit:modelParameter>
+    </spirit:modelParameters>
+  </spirit:model>
+  <spirit:choices>
+    <spirit:choice>
+      <spirit:name>choice_list_74b5137e</spirit:name>
+      <spirit:enumeration>ACTIVE_HIGH</spirit:enumeration>
+      <spirit:enumeration>ACTIVE_LOW</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>choice_list_8af5a703</spirit:name>
+      <spirit:enumeration>0</spirit:enumeration>
+      <spirit:enumeration>1</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>choice_list_9d8b0d81</spirit:name>
+      <spirit:enumeration>ACTIVE_HIGH</spirit:enumeration>
+      <spirit:enumeration>ACTIVE_LOW</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>choice_list_cd7079e5</spirit:name>
+      <spirit:enumeration>16</spirit:enumeration>
+      <spirit:enumeration>32</spirit:enumeration>
+      <spirit:enumeration>64</spirit:enumeration>
+      <spirit:enumeration>128</spirit:enumeration>
+      <spirit:enumeration>256</spirit:enumeration>
+    </spirit:choice>
+  </spirit:choices>
+  <spirit:fileSets>
+    <spirit:fileSet>
+      <spirit:name>xilinx_verilogsynthesis_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>hdl/delay_fifo/delay_fifo.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/AXIDigitalDelayLine_v1_0_S00_AXI.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/DigitalDelayLine_v1_0.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>CHECKSUM_d104a4df</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_verilogsynthesis_xilinx_com_ip_blk_mem_gen_8_4__ref_view_fileset</spirit:name>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="blk_mem_gen" xilinx:version="8.4">
+            <xilinx:mode xilinx:name="create_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_verilogbehavioralsimulation_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>hdl/delay_fifo/delay_fifo.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/AXIDigitalDelayLine_v1_0_S00_AXI.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/DigitalDelayLine_v1_0.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_verilogbehavioralsimulation_xilinx_com_ip_blk_mem_gen_8_4__ref_view_fileset</spirit:name>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="blk_mem_gen" xilinx:version="8.4">
+            <xilinx:mode xilinx:name="create_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_xpgui_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>xgui/DigitalDelayLine_v1_0.tcl</spirit:name>
+        <spirit:fileType>tclSource</spirit:fileType>
+        <spirit:userFileType>CHECKSUM_85cd8231</spirit:userFileType>
+        <spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>bd_tcl_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>bd/bd.tcl</spirit:name>
+        <spirit:fileType>tclSource</spirit:fileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_testbench_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>hdl/DDL_tb.sv</spirit:name>
+        <spirit:fileType>systemVerilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_simulation</spirit:userFileType>
+        <spirit:userFileType>USED_IN_testbench</spirit:userFileType>
+        <spirit:logicalName>xil_defautlib</spirit:logicalName>
+      </spirit:file>
+    </spirit:fileSet>
+  </spirit:fileSets>
+  <spirit:description>Digital Delay Line</spirit:description>
+  <spirit:parameters>
+    <spirit:parameter>
+      <spirit:name>C_AXI_DATA_OUT_START_COUNT</spirit:name>
+      <spirit:displayName>C AXI DATA OUT START COUNT</spirit:displayName>
+      <spirit:description>Start count is the number of clock cycles the master will wait before initiating/issuing any transaction.</spirit:description>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_AXI_DATA_OUT_START_COUNT" spirit:order="5" spirit:minimum="1" spirit:rangeType="long">32</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>Component_Name</spirit:name>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Component_Name" spirit:order="1">DigitalDelayLine_v1_0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>C_AXI_STREAM_TDATA_WIDTH</spirit:name>
+      <spirit:displayName>AXI Stream TDATA Width</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_AXI_STREAM_TDATA_WIDTH" spirit:choiceRef="choice_list_cd7079e5">256</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>USE_URAM</spirit:name>
+      <spirit:displayName>Use URAM for the FIFO</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.USE_URAM" spirit:choiceRef="choice_list_8af5a703">0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>INITIAL_DELAY</spirit:name>
+      <spirit:displayName>Initial Delay</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.INITIAL_DELAY" spirit:bitStringLength="12">0x0FA</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>C_S00_AXI_DATA_WIDTH</spirit:name>
+      <spirit:displayName>C S00 Axi Data Width</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_S00_AXI_DATA_WIDTH">32</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>C_S00_AXI_ADDR_WIDTH</spirit:name>
+      <spirit:displayName>C S00 Axi Addr Width</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_S00_AXI_ADDR_WIDTH">4</spirit:value>
+    </spirit:parameter>
+  </spirit:parameters>
+  <spirit:vendorExtensions>
+    <xilinx:coreExtensions>
+      <xilinx:supportedFamilies>
+        <xilinx:family xilinx:lifeCycle="Pre-Production">zynquplus</xilinx:family>
+      </xilinx:supportedFamilies>
+      <xilinx:taxonomies>
+        <xilinx:taxonomy>AXI_Peripheral</xilinx:taxonomy>
+      </xilinx:taxonomies>
+      <xilinx:displayName>DigitalDelayLine_v1.0</xilinx:displayName>
+      <xilinx:vendorDisplayName>Z-meta Research LLC</xilinx:vendorDisplayName>
+      <xilinx:coreRevision>21</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2019-08-30T21:54:41Z</xilinx:coreCreationDateTime>
+      <xilinx:tags>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@47352f51_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@33193184_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7214c201_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5392b680_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5975930_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1c6f1a93_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@225ceadd_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6d079ca4_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4796dbf2_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@42bd7e53_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@67da717f_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4ccad3d_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@36e8d766_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6fc4d7cf_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7e8df33f_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@25fe73ec_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4b64f30e_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4dae9696_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3dbd7acf_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7805fba3_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3e59e45_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@31b308ce_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@23cf60dc_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@757dc508_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@a06e462_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@59c3a7ce_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@437ec732_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@31cb2eb0_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@37e9186a_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5ba4cdc0_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7809d10_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4a33b64d_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4dfbef4e_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5a54fe33_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7ed6a29d_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7aa9833d_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@440d5662_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3ef6f033_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6bef41a8_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@46fe9fcf_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6973e740_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@58189cd1_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6867b83f_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6b43462b_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@64bb6b79_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4e7dc52c_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6448b867_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2922470d_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@48de9e83_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@d9d9144_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@120ae075_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@71b7ba53_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3c1b750f_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@79d64846_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2ad950df_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1c3c8408_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3baed420_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2e7b52ba_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@666c6e6a_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6ef755e4_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@901e7a6_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@645a13c4_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4293d463_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1916f77b_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@298b8cb6_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4c50751c_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5b25f63b_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4eb45805_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1b1c152b_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7609e72_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@15a5a6da_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@77e85265_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@203f9477_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7371e2e4_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@9e0055_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1cd99c3_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@51c7a817_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6945331c_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4ad2b264_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@54046c1d_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@11f4dbaf_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@608b99c2_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3c83db9f_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3d836bc8_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@51ff357b_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@46d427a3_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@70d66d92_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@75195827_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1a00029_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4a3cff9_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@408e38ce_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@492a6bab_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@585aee85_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@19505203_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1a18d97c_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4844ab48_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6ddafdd2_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7a8a56cc_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4a741dfe_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6d9409_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2472d9f3_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2022df0e_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@331cfd81_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1e821b5e_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4dc1d87d_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@55cc38aa_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6ad8f95f_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6e1004e7_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7a0ed274_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1bb84d35_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7ca514ba_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@17b488d8_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@33b22452_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4e3de0b3_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@44258f96_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@206b2fc4_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@60636452_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@62087108_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@73745595_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@719a8b6b_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7dc45ad0_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3a9139bc_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7c221fce_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@160c1d26_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3fbdd54e_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1864e45_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2bc8fb7_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@709f5b26_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@a45775e_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6d6f9334_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7355bdfe_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@46ed9ede_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3017fab7_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4915ee3d_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1a92cd18_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4ca30f86_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@166ef01d_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@756791e3_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@44378463_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3ff0bb85_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@9751bc8_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@61db4a97_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@560cba6d_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2596bd23_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2e421bbc_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5a87e1f2_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3870dbe8_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1da4e107_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6245bae1_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4416c02f_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@43274ad_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6bdf7298_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1ee2b9f2_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@12cf3762_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3e6da8d5_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@164d15b0_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@31a31b1b_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@663bc131_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@58f11835_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3aa65dd0_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4364a193_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@e018fb9_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1a165121_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5bb8ea6c_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3eccd8e4_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1a778b64_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6bb7b726_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@429a8f89_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@22e5ac78_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4843aa17_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4a31bfde_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@56590080_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7edffc41_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@114ad9df_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@df09e98_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@51dc112a_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@20de797b_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1a6075d3_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3d9c607a_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@710b009e_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4ec44692_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@20ff39aa_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4bb64287_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@635b2476_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4a611605_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@28d1a136_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@e480b1d_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@37a4a913_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7e70b9e5_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@70f37470_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@755357c8_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7d9dfbb3_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4202f021_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@de03ad_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5b2ca849_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2b964b30_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@27d77321_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6438250e_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@a6dee13_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@72d03e87_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@77951779_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3ded2f0c_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@705fd998_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4baf967b_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5e5ec907_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6474aa20_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@59d01665_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@155789d4_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1859ffa4_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@eb33385_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@9118b6b_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@52bc6a2f_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@75040f68_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2418da8b_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7503117c_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4fd4ac72_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5de8581c_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@46405e4f_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@22b55772_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@773d545b_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7bdea444_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@53009519_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6acb9ad7_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@95bfb11_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6a7dcaef_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5b940954_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@63cf24e6_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@10c63241_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1914074f_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@db760d6_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1adfdceb_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@70980131_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@25d6181f_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@51223ee8_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@64caaad0_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7c3cc001_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5ea4c187_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@71daf275_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1a7e1126_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@36fd1316_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3bb929e9_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5c07889b_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@272b200a_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@439f6177_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@d8eb033_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@113ab5a3_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@758b6873_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6bea7c4c_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1be616d3_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@467b7b39_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@32bfe9a6_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@cd495ec_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@53cbcb67_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@15499d22_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@21c4d2e3_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3b260aac_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@66f7d961_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@398c20b8_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3ca4eb0b_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6937fac7_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@79766f5e_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3e59f747_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5b77a7a2_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2cb6036c_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2bf221e8_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2dd732f3_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@151f75e0_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@148049ba_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7e3e186f_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@44cbcdaf_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3644d84b_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@da273b1_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@67394b99_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2b932bda_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@a3ae0c6_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@72bba50c_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4a28f105_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1b985ac2_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@620fff65_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@62e29a4b_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@283eb804_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7ed98d46_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2eccf859_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@46497918_ARCHIVE_LOCATION">c:/Users/zapma/Documents/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1b302737_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@73a7e5f9_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@fbc205_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7c3bfe68_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1d2bbae8_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@35dda04d_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@43410ea2_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@46df81cf_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2f505142_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1a08ee97_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@181b3d4f_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@614b021e_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1de4141b_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@354d5c55_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3b2b4d20_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@361fcebe_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@de17445_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@577f37d8_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@73235b34_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6439aa3b_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1527145f_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7f3179d4_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6f213985_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@10f94fd8_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@28cb49be_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@33449839_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@638e8cc6_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7aa7e82f_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2f34e033_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@843bc5e_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@104cd6a9_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@75a6d9eb_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2e180bdb_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@56d97c76_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@425c7f74_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@422dc3a5_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7ba13d97_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@409e9057_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@319dc686_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@36911590_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7b7a469a_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6a9204f9_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1c927419_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@686854c4_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@597ad632_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@76cea902_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@14d933e7_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@649f086b_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1a3f06a6_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@a751bc7_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@57557bb7_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@54171798_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5786c072_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@170d240d_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7aa21dc5_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@685b8feb_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3163d9c7_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@34197f_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@532d6f27_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@599ce65c_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4cf6134c_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@388a0719_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@b47ce47_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@33ba511_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@368c8334_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@63097f0_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@38011fe8_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4093f9a6_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7b9effc5_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@27194fd6_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@745d1897_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@51f4f050_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@33007b41_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7e4e2d47_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@947a10e_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@da379e6_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4ec11ec9_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@24d95e8c_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@18f35d0_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@35263535_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@51683772_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6a0dd34a_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6f9a14b8_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1882e2e1_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2ac34469_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1320fe42_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@79667353_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@50c989f7_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6d01373c_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1501c317_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@14f5224_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5a959962_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@32c79baa_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5ace010a_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@b6a700b_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1a8ed75c_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@72444e45_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3ab221f9_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@40e063b_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1e6fd7a9_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@55148a0f_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@65c65f0_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@24121c82_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1a621593_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@547315f_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2ac1a152_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@190c4fc2_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7e00d578_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@20a45f2e_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@42f0feb1_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@70b891f_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@584963e6_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4d817b6f_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7161ebea_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5c052a1e_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@47058bef_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4ed87a88_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7f01f320_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2ba2e010_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7e300872_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@22f63c44_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@36312aa0_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@45dcdeb3_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@65f15ecb_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@11fb6019_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@65d99218_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@10ff77ad_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5ae0cee9_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4ac6e0a4_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3538e98f_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@267fec64_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@54a59e43_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5f26994f_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@12885c2_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@34682bc7_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4a69a326_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1328217_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4e3c86c6_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@138579da_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@60392e45_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@26795060_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4806ee30_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1506beca_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@743b06c5_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@53fb34a4_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@48c2a1e8_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4f100522_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@12a24765_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@33a784d2_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2636cccc_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@59fe3e0_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@47185965_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7e53f5c1_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7a100c7_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5956e47c_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7f95fc3d_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3f410763_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1cd7e5f_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@628a58c1_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@18c8e50f_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5a27ac_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3f5dc228_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@60190364_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@21f19cfe_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@438ad769_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4ff4a012_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5ba222c8_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4cf79c93_ARCHIVE_LOCATION">c:/Users/zapma/Documents/GitHub/ChannelSim/ip_repo/DigitalDelayLine_1.0</xilinx:tag>
+      </xilinx:tags>
+    </xilinx:coreExtensions>
+    <xilinx:packagingInfo>
+      <xilinx:xilinxVersion>2019.1</xilinx:xilinxVersion>
+      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="fbc92a4b"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="9312d72f"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="f6a4e47f"/>
+      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="db2177c7"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="b918808a"/>
+    </xilinx:packagingInfo>
+  </spirit:vendorExtensions>
+</spirit:component>
