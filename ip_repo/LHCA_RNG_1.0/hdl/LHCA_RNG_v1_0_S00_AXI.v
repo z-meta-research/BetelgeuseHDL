@@ -395,7 +395,7 @@
 	// Add user logic here
     localparam N=32;
 
-    (* dont_touch = "yes" *) wire [N-1:0] osc;
+    (* dont_touch = "yes", allow_combinatorial_loops="true" *) wire [N-1:0] osc;
     reg [N-1:0] osc_r;
 
         
